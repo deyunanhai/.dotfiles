@@ -11,6 +11,8 @@ autoload -U compinit && compinit
 setopt BASH_AUTO_LIST
 setopt LIST_AMBIGUOUS
 setopt AUTO_PUSHD
+# kill ^D
+setopt IGNOREEOF
 
 ## history
 HISTFILE="$HOME/.zsh_history"
@@ -37,6 +39,9 @@ bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^U" kill-whole-line
 #bindkey "^R" history-incremental-pattern-search-backward
 
 alias la="ls -la"
@@ -48,12 +53,16 @@ alias su="su -l"
 alias st="git status"
 alias where="command -v"
 alias j="jobs -l"
+alias grep="grep --color"
+alias crypt="openssl enc -e -aes256 -k "
+alias decrypt="openssl enc -d -aes256 -k "
 
 # OS dependancy
 case "${OSTYPE}" in
 darwin*)
     alias ls="ls -G -w"
     alias vi='vim'
+    export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
     ;;
 freebsd*|linux*)
     alias ls="ls --color"
@@ -99,7 +108,7 @@ case ${UID} in
     }
     add-zsh-hook precmd _update_vcs_info_msg
     RPROMPT="%1(v|%F{green}%1v%f|)"
-    PROMPT="%{${fg[blue]}%}%m:%~ %n%%%{${reset_color}%} "
+    PROMPT="[%n@%m %~]%% "
     PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
@@ -157,3 +166,7 @@ jfbterm-color)
 esac
 
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
+
+# nvm
+source ~/.nvm/nvm.sh
+nvm use "0.10.2" >/dev/null
