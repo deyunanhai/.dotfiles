@@ -37,12 +37,12 @@ bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
+#bindkey "^R" history-incremental-search-backward
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^F" history-incremental-pattern-search-forward
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^U" kill-whole-line
-#bindkey "^R" history-incremental-pattern-search-backward
 
 alias la="ls -la"
 alias lf="ls -F"
