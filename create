@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd $HOME
+ln -s .dotfiles/.gitconfig
+ln -s .dotfiles/.bashrc
+ln -s .dotfiles/.gitignore_global
+ln -s .dotfiles/.tmux.conf
+ln -s .dotfiles/.zshrc
