@@ -107,7 +107,7 @@ case ${UID} in
         [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
     }
     add-zsh-hook precmd _update_vcs_info_msg
-    RPROMPT="%1(v|%F{green}%1v%f|)"
+    RPROMPT="%1(v|%F{green}%1v%f|)%?"
     PROMPT="[%n@%m %~]%% "
     PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
