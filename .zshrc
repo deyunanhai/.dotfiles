@@ -115,7 +115,7 @@ case ${UID} in
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
         PROMPT="%{${fg[cyan]}%}${PROMPT}%{${reset_color}%}"
 
-    PROMPT+="%(?.%F{blue}%%%f.%F{red}>%f) "
+    PROMPT+="%(?.%F{blue}%%%f.%F{red}%?>%f) "
 
     ;;
 esac
