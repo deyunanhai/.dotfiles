@@ -172,5 +172,6 @@ esac
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
 # nvm
-source ~/.nvm/nvm.sh
+. ~/.nvm/nvm.sh
+#nvm alias default v0.10.2
 nvm use "0.10.2" >/dev/null
