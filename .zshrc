@@ -171,6 +171,9 @@ esac
 
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
+#source ~/.dotfiles/incr*.zsh
+## source auto-fu.zsh
+
 # nvm
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
