@@ -3,6 +3,7 @@
 	email = bocelli.hu@gmail.com
 [core]
 	excludesfile = /Users/hu.hua/.gitignore_global
+	pager = less -+S
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -33,3 +34,5 @@
     s = status --short --branch
     st = status
     su = submodule
+[color]
+	ui = true
