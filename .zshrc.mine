@@ -2,4 +2,4 @@
 export ANDROID_NDK_ROOT=/Users/hu.hua/android-ndk-r8d
 export ANDROID_HOME=/Users/hu.hua/android-sdk-macosx
 
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH=${PATH}:~/bin:${ANDROID_HOME}/platform-tools
