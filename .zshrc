@@ -29,6 +29,10 @@ setopt share_history
 
 ## ビープを鳴らさない
 setopt nobeep
+setopt nolistbeep
+
+autoload -Uz zmv
+alias zrename='noglob zmv -W'
 
 # historical backward/forward search with linehead string binded to ^P/^N
 autoload history-search-end
