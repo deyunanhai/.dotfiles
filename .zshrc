@@ -19,7 +19,7 @@ HISTFILE="$HOME/.zsh_history"
 # memory history
 HISTSIZE=16384
 # file history
-SAVEHIST=163840
+SAVEHIST=1638400
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt hist_ignore_dups
@@ -184,4 +184,4 @@ esac
 # nvm
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
-nvm use "0.10.2" >/dev/null
+nvm use "v0.10.22" >/dev/null
