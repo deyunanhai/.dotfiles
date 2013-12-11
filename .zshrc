@@ -51,19 +51,6 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^U" kill-whole-line
 
-alias la="ls -la"
-alias lf="ls -F"
-alias ll="ls -lh"
-alias du="du -h"
-alias df="df -h"
-alias su="su -l"
-alias st="git status"
-alias where="command -v"
-alias j="jobs -l"
-alias grep="grep --color"
-alias crypt="openssl enc -e -aes256 -k "
-alias decrypt="openssl enc -d -aes256 -k "
-
 # OS dependancy
 case "${OSTYPE}" in
 darwin*)
@@ -180,6 +167,45 @@ esac
 
 #source ~/.dotfiles/incr*.zsh
 ## source auto-fu.zsh
+
+# Use coreutils commands, if they exists
+if which gls > /dev/null 2>&1
+then
+    local myls='gls'
+else
+    local myls='ls'
+fi
+if $myls --color > /dev/null 2>&1
+then
+    local lscolor='--color'
+else
+    local lscolor='-G'
+fi
+alias du="du -h"
+alias df="df -h"
+alias su="su -l"
+alias st="git status"
+alias where="command -v"
+alias j="jobs -l"
+alias grep="grep --color"
+alias crypt="openssl enc -e -aes256 -k "
+alias decrypt="openssl enc -d -aes256 -k "
+
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias view='vim -R'
+
+alias ls='$myls -hF $lscolor'    # add colors for filetype recognition
+alias la="ls -la"
+alias lf="ls -F"
+alias ll="ls -lh"
+alias lx='ls -lXB'              # sort by extension
+alias lk='ls -lSr'              # sort by size
+alias lc='ls -lcr'      # sort by change time  
+alias lu='ls -lur'      # sort by access time   
+alias lr='ls -lR'               # recursive ls
+alias lt='ls -ltr'              # sort by date
 
 # nvm
 . ~/.nvm/nvm.sh
