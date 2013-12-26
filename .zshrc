@@ -210,4 +210,4 @@ alias lt='ls -ltr'              # sort by date
 # nvm
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
-nvm use "v0.10.22" >/dev/null
+nvm use "v0.10.24" >/dev/null
