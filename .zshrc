@@ -212,13 +212,20 @@ alias lt='ls -ltr'              # sort by date
 #nvm alias default v0.10.2
 nvm use "v0.10.24" >/dev/null
 
+# ignore no matches found
+setopt nonomatch
+
 if [ -z "$JAVA_HOME" ]; then
     for candidate in \
-        /usr/lib/jvm/java-6-sun \
-        /usr/lib/jvm/java-1.6.0-sun-1.6.0.*/jre \
-        /usr/lib/jvm/java-1.6.0-sun-1.6.0.* \
-        /usr/lib/jvm/jre-1.6.0* \
+        /usr/lib/jvm/java-1.7*/jre \
+        /usr/lib/jvm/java-1.7* \
+        /usr/lib/jvm/java-1.6*/jre \
+        /usr/lib/jvm/java-1.6* \
+        /usr/lib/jvm/jre-1.7* \
+        /usr/lib/jvm/jre-1.6* \
         /usr/lib/j2sdk1.6-sun \
+        /usr/java/jdk1.7* \
+        /usr/java/jre1.7* \
         /usr/java/jdk1.6* \
         /usr/java/jre1.6* \
         /Library/Java/Home ; do
@@ -231,7 +238,7 @@ fi
 
 if [[ -z $JAVA_HOME ]]; then
     # On OSX use java_home (or /Library for older versions)
-    if [ "Darwin" == "$(uname -s)" ]; then
+    if [ "Darwin" = "$(uname -s)" ]; then
         if [ -x /usr/libexec/java_home ]; then
             export JAVA_HOME=($(/usr/libexec/java_home))
         else
