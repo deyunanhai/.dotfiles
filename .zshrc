@@ -211,3 +211,31 @@ alias lt='ls -ltr'              # sort by date
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
 nvm use "v0.10.24" >/dev/null
+
+if [ -z "$JAVA_HOME" ]; then
+    for candidate in \
+        /usr/lib/jvm/java-6-sun \
+        /usr/lib/jvm/java-1.6.0-sun-1.6.0.*/jre \
+        /usr/lib/jvm/java-1.6.0-sun-1.6.0.* \
+        /usr/lib/jvm/jre-1.6.0* \
+        /usr/lib/j2sdk1.6-sun \
+        /usr/java/jdk1.6* \
+        /usr/java/jre1.6* \
+        /Library/Java/Home ; do
+        if [ -e $candidate/bin/java ]; then
+            export JAVA_HOME=$candidate
+            break
+        fi
+    done
+fi
+
+if [[ -z $JAVA_HOME ]]; then
+    # On OSX use java_home (or /Library for older versions)
+    if [ "Darwin" == "$(uname -s)" ]; then
+        if [ -x /usr/libexec/java_home ]; then
+            export JAVA_HOME=($(/usr/libexec/java_home))
+        else
+            export JAVA_HOME=(/Library/Java/Home)
+        fi
+    fi
+fi
