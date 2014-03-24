@@ -57,6 +57,8 @@ darwin*)
     alias ls="ls -G -w"
     alias vi='vim'
     export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    export MANPATH=/opt/local/man:$MANPATH
     ;;
 freebsd*|linux*)
     alias ls="ls --color"
