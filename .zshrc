@@ -209,6 +209,12 @@ alias lu='ls -lur'      # sort by access time
 alias lr='ls -lR'               # recursive ls
 alias lt='ls -ltr'              # sort by date
 
+alias dstat-full='dstat -Tclmdrn --tcp'
+alias dstat-mem='dstat -Tclm'
+alias dstat-cpu='dstat -Tclr'
+alias dstat-net='dstat -Tclnd'
+alias dstat-disk='dstat -Tcldr'
+
 # nvm
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
