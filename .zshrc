@@ -218,7 +218,7 @@ alias dstat-disk='dstat -Tcldr'
 # nvm
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
-nvm use "v0.10.24" >/dev/null
+nvm use "v0.10.28" >/dev/null
 
 # ignore no matches found
 setopt nonomatch
