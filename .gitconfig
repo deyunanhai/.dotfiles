@@ -4,6 +4,10 @@
 [core]
 	excludesfile = /Users/hu.hua/.gitignore_global
 	pager = less -+S
+#[diff]
+#    external = ~/.dotfiles/git_diff_wrapper
+#[pager]
+#    diff = 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -21,6 +25,7 @@
     df = diff
     dc = diff --cached
     di = diff
+    dt = difftool
     dic = diff --cached
     f = fetch --prune
     fs = !git f && git su
@@ -34,6 +39,7 @@
     s = status --short --branch
     st = status
     su = submodule
+    ls-ig = ls-files --other --ignored --exclude-standard
 [color]
 	ui = true
 [filter "media"]
