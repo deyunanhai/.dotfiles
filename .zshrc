@@ -62,6 +62,7 @@ darwin*)
     ;;
 freebsd*|linux*)
     alias ls="ls --color"
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
     ;;
 esac
 
@@ -253,4 +254,9 @@ if [[ -z $JAVA_HOME ]]; then
             export JAVA_HOME=(/Library/Java/Home)
         fi
     fi
+fi
+
+# OPAM configuration
+if [ -f ~/.opam/opam-init/init.zsh ] ; then
+    . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
