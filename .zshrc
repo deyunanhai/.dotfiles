@@ -249,9 +249,9 @@ if [[ -z $JAVA_HOME ]]; then
     # On OSX use java_home (or /Library for older versions)
     if [ "Darwin" = "$(uname -s)" ]; then
         if [ -x /usr/libexec/java_home ]; then
-            export JAVA_HOME=($(/usr/libexec/java_home))
+            export JAVA_HOME=$(/usr/libexec/java_home)
         else
-            export JAVA_HOME=(/Library/Java/Home)
+            export JAVA_HOME=/Library/Java/Home
         fi
     fi
 fi
