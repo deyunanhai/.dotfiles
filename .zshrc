@@ -193,6 +193,7 @@ alias j="jobs -l"
 alias grep="grep --color"
 alias crypt="openssl enc -e -aes256 -k "
 alias decrypt="openssl enc -d -aes256 -k "
+alias clear2="echo -e '\026\033c'"
 
 alias rm='rm -i'
 alias mv='mv -i'
