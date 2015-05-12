@@ -237,8 +237,7 @@ if [ -z "$JAVA_HOME" ]; then
         /usr/java/jdk1.7* \
         /usr/java/jre1.7* \
         /usr/java/jdk1.6* \
-        /usr/java/jre1.6* \
-        /Library/Java/Home ; do
+        /usr/java/jre1.6* ; do
         if [ -e $candidate/bin/java ]; then
             export JAVA_HOME=$candidate
             break
