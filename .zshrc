@@ -39,7 +39,9 @@ autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
-bindkey -v
+bindkey -d  # clear
+#bindkey -v # vi
+bindkey -e #emacs
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
@@ -50,6 +52,9 @@ bindkey "^F" history-incremental-pattern-search-forward
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^U" kill-whole-line
+
+bindkey "^[u" undo
+bindkey "^[r" redo
 
 # OS dependancy
 case "${OSTYPE}" in
