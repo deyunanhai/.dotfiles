@@ -261,9 +261,10 @@ if [[ -z $JAVA_HOME ]]; then
     fi
 fi
 
-if test "$SSH_AUTH_SOCK" -a -z "$TMUX" ; then
+if test -n "$SSH_AUTH_SOCK" -a -z "$TMUX" -a -n "$SSH_CLIENT" ; then
     ln -snf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
     export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+    # echo "export SSH_AUTH_SOCK"
 fi
 
 # OPAM configuration
