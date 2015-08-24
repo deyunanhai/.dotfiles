@@ -261,7 +261,13 @@ if [[ -z $JAVA_HOME ]]; then
     fi
 fi
 
+if test "$SSH_AUTH_SOCK" -a -z "$TMUX" ; then
+    ln -snf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+    export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+fi
+
 # OPAM configuration
 if [ -f ~/.opam/opam-init/init.zsh ] ; then
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
+
