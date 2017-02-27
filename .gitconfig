@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /Users/hu.hua/.gitignore_global
 	pager = less -+S
+	editor = /usr/bin/vim
 #[diff]
 #    external = ~/.dotfiles/git_diff_wrapper
 #[pager]
