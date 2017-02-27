@@ -281,3 +281,5 @@ if [ -d ~/.conscript/bin ] ; then
     export PATH="${HOME}/.conscript/bin:$PATH"
 fi
 
+export EDITOR=vim
+
