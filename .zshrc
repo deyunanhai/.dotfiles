@@ -250,6 +250,12 @@ if [ -z "$JAVA_HOME" ]; then
     done
 fi
 
+export GOPATH=$HOME/golang
+if [ -d "$GOPATH" ]; then
+    export GOROOT=/usr/local/opt/go/libexec
+    export PATH="${GOPATH}/bin:$PATH"
+fi
+
 if [[ -z $JAVA_HOME ]]; then
     # On OSX use java_home (or /Library for older versions)
     if [ "Darwin" = "$(uname -s)" ]; then
@@ -261,7 +267,19 @@ if [[ -z $JAVA_HOME ]]; then
     fi
 fi
 
+if test -n "$SSH_AUTH_SOCK" -a -z "$TMUX" -a -n "$SSH_CLIENT" ; then
+    ln -snf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+    export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+fi
+
 # OPAM configuration
 if [ -f ~/.opam/opam-init/init.zsh ] ; then
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
+
+if [ -d ~/.conscript/bin ] ; then
+    export PATH="${HOME}/.conscript/bin:$PATH"
+fi
+
+export EDITOR=vim
+
