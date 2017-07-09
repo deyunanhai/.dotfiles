@@ -7,3 +7,5 @@ ln -s .dotfiles/.bash_profile
 ln -s .dotfiles/.gitignore_global
 ln -s .dotfiles/.tmux.conf
 ln -s .dotfiles/.zshrc
+
+touch .zshrc.mine
