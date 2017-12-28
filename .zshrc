@@ -281,5 +281,9 @@ if [ -d ~/.conscript/bin ] ; then
     export PATH="${HOME}/.conscript/bin:$PATH"
 fi
 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
 export EDITOR=vim
 
