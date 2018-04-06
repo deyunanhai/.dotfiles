@@ -222,6 +222,10 @@ alias dstat-cpu='dstat -Tclr'
 alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
 
+alias k="kubectl"
+alias kx="kubectx"
+alias kn="kubens"
+
 # nvm
 . ~/.nvm/nvm.sh
 #nvm alias default v0.10.2
