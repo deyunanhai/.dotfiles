@@ -14,3 +14,4 @@ export PATH=${PATH}:~/Documents/server/mysql-5.6.10-osx10.7-x86_64/bin:~/android
 
 #set -o vi
 PATH="/Users/bocellisoft/.conscript/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

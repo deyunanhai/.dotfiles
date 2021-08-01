@@ -2,7 +2,11 @@
 export ANDROID_NDK_ROOT=/Users/bocellisoft/android-ndk-r8d
 export ANDROID_HOME=/Users/bocellisoft/android-sdk-macosx
 
-export PATH=${PATH}:~/bin:${ANDROID_HOME}/platform-tools
+export PATH=${PATH}:~/bin
+
+if [ -d ${ANDROID_HOME}/platform-tools ] ; then
+    export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+fi
 
 if [ -d ~/google-cloud-sdk ] ; then
     # The next line updates PATH for the Google Cloud SDK.

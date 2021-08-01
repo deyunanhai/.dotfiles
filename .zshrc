@@ -285,6 +285,10 @@ if [ -d ~/.conscript/bin ] ; then
     export PATH="${HOME}/.conscript/bin:$PATH"
 fi
 
+if [ -d ~/Documents/tool/flutter/bin ] ; then
+    export PATH="${HOME}/Documents/tool/flutter/bin:$PATH"
+fi
+
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
