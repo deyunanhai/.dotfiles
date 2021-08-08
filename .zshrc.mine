@@ -1,6 +1,6 @@
 
-export ANDROID_NDK_ROOT=/Users/bocellisoft/android-ndk-r8d
-export ANDROID_HOME=/Users/bocellisoft/android-sdk-macosx
+export ANDROID_NDK_ROOT=${HOME}/android-ndk-r8d
+export ANDROID_HOME=${HOME}/android/sdk
 
 export PATH=${PATH}:~/bin
 

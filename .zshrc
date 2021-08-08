@@ -289,6 +289,14 @@ if [ -d ~/Documents/tool/flutter/bin ] ; then
     export PATH="${HOME}/Documents/tool/flutter/bin:$PATH"
 fi
 
+if [ -d ~/.rbenv/shims ] ; then
+    export PATH="${HOME}/.rbenv/shims:$PATH"
+fi
+
+if [ -d /opt/homebrew/bin ] ; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
