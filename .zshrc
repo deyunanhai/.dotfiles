@@ -56,6 +56,9 @@ bindkey "^U" kill-whole-line
 bindkey "^[u" undo
 bindkey "^[r" redo
 
+bindkey ";5D" backward-word
+bindkey ";5C" forward-word
+
 # OS dependancy
 case "${OSTYPE}" in
 darwin*)
@@ -279,10 +282,6 @@ fi
 # OPAM configuration
 if [ -f ~/.opam/opam-init/init.zsh ] ; then
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-fi
-
-if [ -d ~/.conscript/bin ] ; then
-    export PATH="${HOME}/.conscript/bin:$PATH"
 fi
 
 if [ -d ~/Documents/tool/flutter/bin ] ; then
