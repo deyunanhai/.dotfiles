@@ -296,6 +296,10 @@ if [ -d /opt/homebrew/bin ] ; then
     export PATH="/opt/homebrew/bin:$PATH"
 fi
 
+if [ -d ~/.local/bin ] ; then
+    export PATH="${HOME}/.local/bin:$PATH"
+fi
+
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
