@@ -22,7 +22,7 @@
     bra = branch -a
     bre = browse-remote
     com = commit
-    co = checkout
+    c = checkout
     df = diff
     dc = diff --cached
     di = diff
