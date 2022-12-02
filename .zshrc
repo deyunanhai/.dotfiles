@@ -59,6 +59,10 @@ bindkey "^[r" redo
 bindkey ";5D" backward-word
 bindkey ";5C" forward-word
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xv' edit-command-line
+
 # OS dependancy
 case "${OSTYPE}" in
 darwin*)
@@ -310,3 +314,4 @@ fi
 
 export EDITOR=vim
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
