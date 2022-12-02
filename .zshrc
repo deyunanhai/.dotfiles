@@ -61,6 +61,7 @@ bindkey ";5C" forward-word
 
 autoload -U edit-command-line
 zle -N edit-command-line
+#bindkey '\033v' edit-command-line # escape + v
 bindkey '^xv' edit-command-line
 
 # OS dependancy
